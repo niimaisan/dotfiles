@@ -1,0 +1,53 @@
+SHELL = /bin/bash
+LOGABSTRACT = "all"
+VERBOSE = ON
+DISPLAY = 0.0
+DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus
+
+MAILDIR = "$HOME/.mail/"
+DEFAULT = "$HOME/.mail/inbox/"
+
+#---- Spamassassin
+:0fw
+| /usr/bin/spamc
+
+
+#---- Spam
+:0:
+* ^X-Spam-Status: Yes
+spam/
+
+:0:
+* ^X-Spam-Flag: YES
+spam/
+
+:0:
+* ^X-Spam-Level: \*\*\*\*\*
+spam/
+
+
+#---- Gmail
+:0
+* ^To:.*@gmail.com
+gmail/
+
+
+#---- Publicidad
+:0
+* ^From:.*noreply@outlet-pc.es
+* ^From:.*infoweb@outlet-pc.es
+publicity/
+
+
+#---- Listas de correo
+:0:
+* ^List-Id:.*\/.*|\
+  ^List-Unsubscribe:.*\/.*
+lists/
+
+
+
+
+#---- Notificaciones
+:0 ic:
+| notify-send -a 'Correo nuevo: ' "$(grep "^From:\|^To:\|^Subject:")"

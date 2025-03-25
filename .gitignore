@@ -1,0 +1,10 @@
+*.db
+*.log
+*.pid
+mpdstate
+*.sql
+
+cache/
+tmp/
+
+__pycache__/

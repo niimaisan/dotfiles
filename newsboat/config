@@ -1,0 +1,43 @@
+auto-reload yes
+reload-time 30
+reload-threads 11
+max-items 100
+browser "brave-browser %u"
+articlelist-format "%4i %f %D %?T?|%-17T| ?%t"
+show-read-feeds yes
+download-path "~/music/podcasts/%h/%n"
+feed-sort-order lastupdated
+confirm-mark-feed-read no
+confirm-mark-all-feeds-read no
+
+bind-key h quit
+bind-key j down
+bind-key k up
+bind-key l open
+bind-key H prev-feed
+bind-key L next-feed
+bind-key g home
+bind-key G end
+bind-key SPACE macro-prefix
+bind-key b bookmark 
+bind-key ^F pagedown 
+bind-key ^B pageup 
+bind-key ^H toggle-show-read-feeds
+
+color background default default
+color listnormal color255 default
+color listfocus color238 color255 standout
+color listnormal_unread color47 default
+color listfocus_unread color238 color47 standout
+color info color141 color236
+
+highlight all "---.*---" yellow
+highlight feedlist ".*(0/0))" black
+highlight article "(^Feed:|^Title:|^Date:|^Link:|^Author:)" cyan default bold
+highlight article "https?://[^ ]+" yellow default
+highlight article "\\[[0-9][0-9]*\\]" magenta default bold
+highlight article "\\[image\\ [0-9]+\\]" green default bold
+highlight article "\\[embedded flash: [0-9][0-9]*\\]" green default bold
+highlight article ":.*\\(link\\)$" cyan default
+highlight article ":.*\\(image\\)$" blue default
+highlight article ":.*\\(embedded flash\\)$" magenta default

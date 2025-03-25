@@ -1,0 +1,131 @@
+# Buzones
+set mbox_type = Maildir
+set folder = ~/.mail/
+set spoolfile = ~/.mail/inbox
+set record = ~/.mail/sent
+set postponed = ~/.mail/drafts
+set trash = ~/.mail/trash
+
+mailboxes =inbox =importants =sent =drafts =lists =publicity =gmail =spam =trash
+
+
+# Externos
+set editor = "nvim -c 'set filetype=mail textwidth=79 noautoindent'"
+set query_command="goobook query %s"
+
+
+# Directorios
+set alias_file = ~/.config/mutt/alias
+set certificate_file = ~/.config/mutt/certificates
+set header_cache = ~/.config/mutt/cache/headers
+set message_cachedir = ~/.config/mutt/cache/bodies
+set mailcap_path = ~/.config/mutt/mailcap
+set signature = ~/.config/mutt/signature
+set tmpdir = ~/.config/mutt/tmp
+
+
+# Principal
+unset confirmappend
+set delete
+set mail_check = 0
+unset markers
+unset mark_old
+set menu_scroll
+set pager_index_lines = 10
+set pager_context = 5
+set pager_stop
+set pipe_decode
+set reverse_alias
+set smart_wrap
+set sort = threads
+set sort_aux = reverse-last-date-received
+set thorough_search
+unset tilde
+set timeout = 3
+set reply_regexp	= "^(([Rr][Ee]?(\[[0-9]+\])?: *)?(\[[^]]+\] *)?)*"
+set quote_regexp = "^( {0,4}[>|:#%]| {0,4}[a-z0-9]+[>|]+)+"
+
+
+# Sidebar
+set sidebar_visible = yes
+set sidebar_width = 20
+bind index,pager \CJ sidebar-next
+bind index,pager \CK sidebar-prev
+bind index,pager \CO sidebar-open
+
+
+# Cabeceras
+ignore *
+unignore from: to: cc: date: subject:
+hdr_order from: to: cc: date: subject:
+
+
+# Composición
+set askcc
+set attribution = 'On %d, %n wrote:'
+set edit_headers
+set fast_reply
+set forward_format = 'Fwd: %s'
+set forward_quote
+set include
+set realname = ''
+set reply_to
+set reverse_name
+set from = ''
+set send_charset = 'utf-8:iso-8859-15'
+
+
+# Envío
+set sendmail = '/usr/bin/msmtp'
+set sendmail_wait = 0
+
+
+# Visionado
+auto_view text/html
+alternative_order text/plain text/enriched text/html
+set assumed_charset = 'iso-8859-15:utf-8'
+
+
+# Binds
+bind editor <Tab> complete-query
+
+
+# Folder hooks
+folder-hook =inbox 'push "<delete-pattern> ~d>15d\n"'
+folder-hook =sent 'push "<delete-pattern> ~d>15d\n"'
+folder-hook =lists 'push "<delete-pattern> ~d>15d\n"'
+folder-hook =spam 'push "<delete-pattern> ~d>7d\n"'
+folder-hook =trash 'push "<delete-pattern> ~d>7d\n"'
+folder-hook =gmail 'push "<delete-pattern> ~d>15d\n"'
+folder-hook =drafts 'push "<delete-pattern> ~d>15d\n"'
+
+
+# Macros
+macro index,pager ,ss <pipe-message>"sa-learn --spam --no-sync<enter>"s=spam<enter>"
+macro index,pager ,sh <pipe-message>"sa-learn --ham --no-sync<enter>"s=inbox<enter>"
+macro pager \cb 'urlview' 'Follow links with urlview'
+
+
+# Theme
+source ~/.config/mutt/themes/nord.theme
+
+
+# GPG
+set pgp_decode_command="gpg %?p?--passphrase-fd 0? --no-verbose --batch --output - %f"
+set pgp_verify_command="gpg --no-verbose --batch --output - --verify %s %f"
+set pgp_decrypt_command="gpg --passphrase-fd 0 --no-verbose --batch --output - %f"
+set pgp_sign_command="gpg --no-verbose --batch --output - --passphrase-fd 0 --armor --detach-sign --textmode %?a?-u %a? %f"
+set pgp_clearsign_command="gpg --no-verbose --batch --output - --passphrase-fd 0 --armor --textmode --clearsign %?a?-u %a? %f"
+set pgp_encrypt_only_command="gpg --output - --armor -r %r -e %f"
+set pgp_encrypt_sign_command="gpg --passphrase-fd 0 --batch --quiet --no-verbose --textmode --output - --encrypt --sign %?a?-u %a? --armor --always-trust -r %r -- %f"
+set pgp_import_command="gpg --no-verbose --import -v %f"
+set pgp_export_command="gpg --no-verbose --export --armor %r"
+set pgp_verify_key_command="gpg --no-verbose --batch --fingerprint --check-sigs %r"
+set pgp_list_pubring_command="gpg --no-verbose --batch --with-colons --list-keys %r"
+set pgp_list_secring_command="gpg --no-verbose --batch --with-colons --list-secret-keys %r"
+set pgp_autosign=yes
+set pgp_sign_as=""
+set pgp_replyencrypt=yes
+set pgp_timeout=1800
+set pgp_good_sign="^gpg: Good signature from"
+set pgp_verify_sig=yes

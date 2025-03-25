@@ -1,0 +1,6 @@
+text/html; /usr/bin/elinks -dump -eval "set document.codepage.assume=%{charset}" '%s'; copiousoutput; description=HTML Text; nametemplate=%s.html
+text/*; /usr/bin/less '%s'
+image/jpeg; feh '%s'; nametemplate=%s.jpg; test=test "$DISPLAY" != ""
+image/png; feh '%s'; nametemplate=%s.png; test=test "$DISPLAY" != ""
+image/pjpeg; feh '%s'; nametemplate=%s.jpg; test=test "$DISPLAY" != ""
+application/pdf; zathura '%s' &; test=test -n "$DISPLAY"; needsterminal

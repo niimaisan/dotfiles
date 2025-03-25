@@ -1,0 +1,46 @@
+
+http://www.genbeta.com/index.xml "tecnologia" "blog"
+http://feeds.weblogssl.com/xataka2 "tecnologia" "blog"
+
+http://www.muylinux.com/feed/ "linux" "blog"
+http://feeds.feedburner.com/UsemosLinux "linux" "blog"
+http://victorhckinthefreeworld.wordpress.com/feed/ "linux" "blog"
+http://lignux.com/feed/ "linux" "blog"
+http://www.linuxhispano.net/feed/ "linux" "blog"
+http://www.linuxadictos.com/feed "linux" "blog"
+https://algodelinux.com/feed/ "linux" "blog"
+http://fedoramagazine.org/feed/ "linux" "blog"
+http://feeds.feedburner.com/UbuntizandoElPlaneta "linux" "blog"
+http://salmorejogeek.com/feed/ "linux" "blog"
+http://feeds2.feedburner.com/Ubunlog "linux" "blog"
+https://anchor.fm/s/5a5b39c/podcast/rss "linux" "podcast"
+https://bits.debian.org/feeds/feed.rss "linux" "blog"
+https://www.debian.org/News/news "linux" "news"
+
+https://www.3djuegos.com/universo/rss/rss.php "games" "blog"
+https://www.vidaextra.com/index.xml "games" "blog"
+https://vandal.elespanol.com/xml.cgi "games" "blog"
+https://www.ivoox.com/feed_fg_f1813904_filtro_1.xml "games" "podcast"
+
+http://feeds.feedburner.com/WindowsNoticias "windows" "blog"
+http://www.xatakawindows.com/categoria/windows/rss2.xml "windows" "blog"
+http://www.genbeta.com/categoria/windows/rss2.xml "windows" "blog"
+
+https://www.fotogramas.es/rss/all.xml/ "movies" "blog"
+http://www.blogdecine.com/index.xml "movies" "blog"
+http://www.seriesadictos.com/feed/ "movies" "blog"
+http://www.elseptimoarte.net/rss.php "movies" "blog"
+https://www.ivoox.com/feed_fg_f113302_filtro_1.xml "movies" "podcast"
+https://www.ivoox.com/feed_fg_f11476931_filtro_1.xml "movies" "podcast"
+https://www.ivoox.com/feed_fg_f138739_filtro_1.xml "movies" "podcast"
+
+https://somoskudasai.com/feed/ "anime" "blog"
+https://ramenparados.com/feed/ "anime" "blog"
+
+http://feeds.feedburner.com/NoticiasSeguridadInformatica "security" "blog"
+http://blog.elhacker.net/feeds/posts/default "security" "blog"
+http://feeds.feedburner.com/esetla-laboratorio "security" "blog"
+http://feeds.feedburner.com/ElLadoDelMal "security" "blog"
+http://muyseguridad.net/feed/ "security" "blog"
+
+https://www.ivoox.com/feed_fg_f171557_filtro_1.xml "various" "podcast"
